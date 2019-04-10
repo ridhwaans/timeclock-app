@@ -1,0 +1,39 @@
+<div class="well">
+  <h4>Hello <%= current_user.username.capitalize %></h4>
+  <% if @user.clock_events == 0 %>
+    You dont have any clock events. 
+  <% else %>
+    You currently have <strong><%= @user.clock_events.size %></strong> clock events.
+  <% end %>
+  <br><br>
+  <%= link_to 'Add a Clock Event', new_clock_event_path, class: 'btn btn-info' %>
+
+</div>
+
+
+<% @user.clock_events.each do |clock_event| %>
+
+  <div class="well span8">
+    <div>
+      <h4>Clock Event: <%= link_to clock_event.name, clock_event_path(clock_event) %></h4>
+      <p>
+        <strong>Description:</strong> <%= clock_event.description %>
+      </p>
+      <p>Last Clock</p>
+      <%= render 'current_clock', clock_event: clock_event %>
+    </div>
+    
+    <div class="buttons">
+      <%= render 'shared/clock_buttons', clock_event: clock_event %>
+    </div>
+    <p>
+      <%= link_to "view all clocks for #{clock_event.name}", clock_event_path(clock_event) %>
+    </p>
+    <p>
+    <strong>Time spent:</strong>
+    <%= format_total_time(clock_event.total_time_on_clock_event) %>
+    </p>
+    
+  </div>  
+
+<% end %>

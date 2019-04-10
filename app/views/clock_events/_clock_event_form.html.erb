@@ -1,0 +1,15 @@
+<%= render 'shared/errors', object: @clock_event %>
+
+<%= form_for(@clock_event) do |f| %>
+
+<div>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+<div>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+</div>
+<%= f.submit @clock_event.new_record? ? 'Add Clock Event' : 'Update Clock Event', class: 'btn' %>    
+<% end %>
+

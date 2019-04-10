@@ -1,0 +1,50 @@
+ @import "bootstrap";
+
+.container {
+  margin-left: 135px
+}
+
+.navbar .nav > li > a.brand {
+  padding-left: 0px;
+}
+
+.quiet {
+  color: #ababab;
+}
+
+.current_time {
+  font-size: 18px;
+  margin-left: 233px;
+  display: block;
+}
+
+.label  {
+  a, a:hover, a:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+div.nav_item {
+  margin-left: 25px;
+  float: left;
+}
+
+div.comment_votes {
+  padding: 10px;
+}
+
+div.buttons {
+  position: relative;
+}
+div.buttons h3 {
+  position: absolute;
+  top: 0;
+  left: 163px;    
+  background: #FFF;
+  line-height: 29px;
+  padding: 5px;
+  border: solid lightgreen 1px;
+  border-radius: 3px;
+  font-size: 24px;
+}

@@ -1,0 +1,17 @@
+<% if clock_event.clocks.any? %>  
+  <table class="table table-striped">
+    <tr>
+      <th>Date</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Time spent</th>    
+    </tr>
+    <tr>
+      <td> <%= clock_in_date(clock_event.clocks.last.created_at) %> </td>
+      <td><%= clock_in_time(clock_event.clocks.last.created_at) %></td>
+      <td><%= clock_out_time(clock_event.clocks.last.clock_out) %></td>
+      <td> <%= clock_event.clocks.last.time_on_clock %> </td>
+    </tr>
+</table>
+
+<% end %>  

@@ -1,0 +1,27 @@
+<p><%= link_to 'Back to clock events', clock_events_path  %> </p>
+<p><%= link_to '[edit clock event]', edit_clock_event_path(@clock_event) %></p>
+<h3> <%= @clock_event.name %> </h3>
+
+<table class="table table-striped">
+  <tr>
+    <th>Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Time spent</th>    
+  </tr>
+  <% @clock_event.clocks.each do |clock| %>
+    <tr>
+      <td> <%= clock_in_date(clock.created_at) %> </td>
+      <td> <%= clock_in_time(clock.created_at) %> </td>
+      <td> <%= clock_out_time(clock.clock_out) %> </td>
+      <td> <%= clock.time_on_clock %> </td>
+    </tr>
+  <% end %>
+</table>
+
+<h4>
+  Time spent: <%= format_total_time(@clock_event.total_time_on_clock_event) %>
+</h4>
+<div>
+  <%= render 'shared/clock_buttons', clock_event: @clock_event %>
+</div>
