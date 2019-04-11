@@ -13,14 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20140723152456) do
 
-  create_table "users", force: true do |t|
-    t.string   "username"
-    t.string   "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
-  create_table "clock_events", force: true do |t|
+  create_table "clock_events", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at"
@@ -28,11 +24,18 @@ ActiveRecord::Schema.define(version: 20140723152456) do
     t.integer  "user_id"
   end
 
-  create_table "clocks", force: true do |t|
+  create_table "clocks", force: :cascade do |t|
     t.integer  "clock_event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "clock_out"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
