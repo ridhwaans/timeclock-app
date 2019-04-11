@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.1'
+ruby '2.6.2'
 
 gem 'bcrypt-ruby', '=3.0.1'
 gem 'bootstrap-sass', '~> 2.3.2.0'
