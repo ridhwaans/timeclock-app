@@ -2,13 +2,13 @@
 
 ### Setup
 - in Terminal, `cd` to the root directory, and run `bundle install`
-- run `rake db:create` or `rake db:schema:load` to create the database
+- run `rake db:create`, `rake db:schema:load` to create the database
 - run `rails server`
 - go to `localhost:3000`
 - create an account to login and start clocking in and out
 
-*Github link* https://github.com/ridhwaans/timeclock-app
-*Heroku link*
+*Github link* https://github.com/ridhwaans/timeclock-app  
+*Heroku link* https://timeclock-app.herokuapp.com/login  
 
 **How did you approach this challenge?**  
 After I understood the problem and its criteria, I began information gathering the project requirements. I knew it required an MVC webapp with CRUD and a database component, so I built a ruby on rails solution around it. I broke down the bigger requirements into smaller problems, and designed a boilerplate code template and added on to it. 
