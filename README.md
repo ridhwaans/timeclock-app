@@ -5,13 +5,12 @@
 - run `rake db:create`, `rake db:schema:load` to create the database
 - run `rails server`
 - go to `localhost:3000`
-- create an account to login and start clocking in and out
+- create an account to login and use
 
-*Github link* https://github.com/ridhwaans/timeclock-app  
-*Heroku link* https://timeclock-app.herokuapp.com/login  
+**Github** https://github.com/ridhwaans/timeclock-app  
 
 **How did you approach this challenge?**  
-After I understood the problem and its criteria, I began information gathering the project requirements. I knew it required an MVC webapp with CRUD and a database component, so I built a ruby on rails solution around it. I broke down the bigger requirements into smaller problems, and designed a boilerplate code template and added on to it. 
+I gathered the project requirements, and decided to build an MVC webapp with CRUD and a database component, utilizing ruby on rails. I broke down the bigger requirements into smaller problems, and designed a boilerplate code template and added on to it. 
 
 **What schema design did you choose and why?**  
 For the database schema design, three different tables to store and manage the application state. As the main feature is for users to clock in timesheets, the schema has one user to many clock events constraint, and one event to many clock in/outs. Passwords are stored as an encrypted hash, and other fields are also explicitly typed. Also used ActiveRecord to map objects, and clear naming across models and views. Didnt create unnecessary fields that would take up extra memory.
